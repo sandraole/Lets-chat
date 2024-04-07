@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class='container'>
+<h2 class='center'>Ready, Set, GO</h2>
+
+<p>Welcome! This is a safe space where you can freely discuss a variety of topics. We're glad to have you here!</p>
+
+<h2>What Can You Expect from the "Let's Chat" App?</h2>
+
+<p>"Think about Jodel, but make it better." - my Mom</p>
+
+<p>Excuse me?</p>
+
+<p>Yeah, that won't tell you much. Why wouldn't you just figure it out by yourself?</p>
+
+
+<h2 class='center'>Join Us and Enjoy the Conversation!</h2>
+
+<p>To log in, please fill in your username and password:</p>
+<form action='/login' method='POST'>
+<input type='text' name='username' placeholder='Username'>
+<div class='login-button'>
+<input type='password' name='password' placeholder='Password'>
+<br>
+<form action='/login' method='GET'></form>
+<input type='submit' value='Login'>
+</div>
+</form>
+
+<p>Don't have an account yet? Press "Register" and join "Let's Chat"</p>
+<form action='/register' method='GET'>
+<input type='submit' value='Register'>
+</form>
+</div>
+<hr>
+
+{% endblock %}

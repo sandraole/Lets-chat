@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class='container'>
+<h2 class='center'>Register</h2>
+<p>We're thrilled to hear that you've chosen to delve deeper into the world of words. Here, you can register and create an account to engage in the conversations waiting for you.</p>
+
+<p>Please fill in the details below to create a new user account.</p>
+
+<form action='/register' method='POST'>
+<p>Username:<br>
+<input type='text' name='username' id='username' minlength='1' maxlength='25' class='input-box' placeholder='1-25 characters' required></b><br>
+<p>Password:<br>
+<input type='password' name='password1' id='password1' minlength='5' maxlength='25' class='input-box' placeholder='5-25 characters' required></b><br>
+
+<p>Repeat password:<br>
+<input type='password' name='password2' id='password2' minlength='5' maxlength='25' class='input-box' placeholder='5-25 characters' required></b><br>
+<p>Select role:</p>
+<select name='role'>
+<option value='1'>Regular user</option>
+<option value='2'>Admin</option>
+</select>
+
+<p>After you've completed the required fields, please press "Confirm registration". You can then return to the front page, where you can log in and begin your studies.</p>
+
+<input type='submit' value='Confirm registration'>
+<input type='hidden' name='csrf_token' value='{{ session.csrf_token }}'>
+</form>
+
+<p><a href='/'>Return to front page</a></p>
+</div>
+<hr>
+
+{% endblock %}
