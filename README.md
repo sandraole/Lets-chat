@@ -1,6 +1,6 @@
 # Lets-chat
 
-Let's Chat - Keskustelusovellus
+## Let's Chat - Keskustelusovellus
 
 Kaipaatko jutteluseuraa tai kaveria? Let's Chat mahdollistaa tämän kaiken sinulle!
 Voit tehdä helposti oman käyttäjätunnuksen ja kirjautua sisään aina, kun siltä tuntuu.
@@ -14,3 +14,52 @@ taas, kun kaipaat juttelukaveria.
 
 Kaikkea tätä valvovat ahkerat ylläpitäjät. Kannattaa käyttäytyä kunnolla, sillä he voivat lisätä tai poistaa
 keskusteluita. Tarvittaessa ylläpitäjä voi antaa harvoille ja valituille käyttäjille pääsyn salaiselle alueelle.
+
+
+### Sovelluksen ominaisuuksia:
+
+    * Käyttäjä voi kirjautua sisään ja ulos sekä luoda uuden tunnuksen.
+    * Käyttäjä näkee sovelluksen etusivulla listan alueista sekä jokaisen alueen ketjujen ja viestien määrän ja viimeksi lähetetyn viestin ajankohdan.
+    * Käyttäjä voi luoda alueelle uuden ketjun antamalla ketjun otsikon ja aloitusviestin sisällön.
+    * Käyttäjä voi kirjoittaa uuden viestin olemassa olevaan ketjuun.
+    * Käyttäjä voi muokata luomansa ketjun otsikkoa sekä lähettämänsä viestin sisältöä. Käyttäjä voi myös poistaa ketjun tai viestin.
+    * Käyttäjä voi etsiä kaikki viestit, joiden osana on annettu sana.
+    * Ylläpitäjä voi lisätä ja poistaa keskustelualueita.
+    * Ylläpitäjä voi luoda salaisen alueen ja määrittää, keillä käyttäjillä on pääsy alueelle.
+
+
+### Tämän hetken tilanne (07.04.2024):
+    * Minulla oli SSH-yhteyden kanssa ongelmia. Jouduin poistamaan githubin vanhan repon kokonaan ja tekemään uuden. Nyt ongelma on korjattu.
+    * Käyttäjä voi tehdä käyttäjätunnuksen ja kirjautua sisään.
+    * Sovelluksen html tiedostot ja layout ovat käytännössä valmiit. Puuttuu vain muutama html.
+    * Sovellus on vielä vaiheessa, mutta siihen on tulossa lisää toiminnallisuuksia ja tauluja. Seuraavaksi aloitan keskutelupalstan tekemisen.
+ 
+
+### Sovelluksen taulut:
+    1. Users
+
+
+## Sovelluksen asentamisen ohjeet paikallisesti:
+
+1. Tallenna tästä sovelluksesta löytyvät tiedostot samaan kansioon. (**Huomaa** tiedoston requirement.txt vaadittavat paketit ja lataa ne)
+
+2. Luo .env tiedosto kyseiseen kansioon ja lisää siihen seuraavat tiedot:
+ - DATABASE_URL=<database-local-address> (postgresql:///user)
+ - SECRET_KEY=<your_secret_key>
+
+3. Avaa terminaali, aktivoi virtuaaliympäristö ja aja seuraavat käskyt:
+    ```
+ - $ python3 -m venv venv
+ - $ source venv/bin/activate
+ - $ pip install -r ./requirements.txt
+    ```
+
+4. Luo tietokanta psql:ssä:
+    ```
+ - $ psql < schema.sql
+    ```
+    
+5. Käynnistä sovellus:
+    ```
+ - $ flask run
+    ```
