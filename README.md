@@ -48,18 +48,12 @@ keskusteluita. Tarvittaessa ylläpitäjä voi antaa harvoille ja valituille käy
  - SECRET_KEY=<your_secret_key>
 
 3. Avaa terminaali, aktivoi virtuaaliympäristö ja aja seuraavat käskyt:
-    ```
  - $ python3 -m venv venv
  - $ source venv/bin/activate
  - $ pip install -r ./requirements.txt
-    ```
 
 4. Luo tietokanta psql:ssä:
-    ```
  - $ psql < schema.sql
-    ```
-    
+
 5. Käynnistä sovellus:
-    ```
  - $ flask run
-    ```
