@@ -16,7 +16,7 @@ Kaikkea tätä valvovat ahkerat ylläpitäjät. Kannattaa käyttäytyä kunnolla
 keskusteluita. Tarvittaessa ylläpitäjä voi antaa harvoille ja valituille käyttäjille pääsyn salaiselle alueelle.
 
 
-### Sovelluksen ominaisuuksia:
+### Sovelluksen tulevia ominaisuuksia:
 
     * Käyttäjä voi kirjautua sisään ja ulos sekä luoda uuden tunnuksen.
     * Käyttäjä näkee sovelluksen etusivulla listan alueista sekä jokaisen alueen ketjujen ja viestien määrän ja viimeksi lähetetyn viestin ajankohdan.
@@ -29,15 +29,18 @@ keskusteluita. Tarvittaessa ylläpitäjä voi antaa harvoille ja valituille käy
 
 
 ### Tämän hetken tilanne (23.04.2024):
-    * Käyttäjä voi tehdä käyttäjätunnuksen ja kirjautua sisään.
     * Sivustolla kävijä näkee kuinka mones vierailija hän on.
+    * Käyttäjä voi tehdä käyttäjätunnuksen ja kirjautua sisään.
+    * Kirjautuessaan käyttäjä pääsee omaan profiiliin, josta hän pääsee lukemaan keskustelupalstan säännöt.
+    * Pääsee sivustolle, jossa voi tehdä oman keskustelun. Itse keskustelun tekeminen ei vielä toimi.
+    * Sovelluksen toiminnallisuudet on vielä vaiheessa. Keskustelupalstan pohja ja funktiot ovat valmiit, mutta kaikki ei toimi vielä yhdessä.
     * Sovelluksen html tiedostot ja ulkoasu ovat käytännössä valmiit. Puuttuu vain muutama html.
-    * Sovelluksen toiminnallisuudet on vielä vaiheessa. Seuraavaksi aloitan keskutelupalstan tekemisen.
  
 
 ### Sovelluksen taulut:
     1. Users
     2. Visitors
+    3. Messages
 
 
 ## Sovelluksen asentamisen ohjeet paikallisesti:
