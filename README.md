@@ -65,4 +65,8 @@ keskusteluita. Tarvittaessa ylläpitäjä voi antaa harvoille ja valituille käy
 6. Käynnistä sovellus:
    ```
    flask run
+<<<<<<< HEAD
    ```
+=======
+   ```
+>>>>>>> 7835b825cd870c89f7a8df3fe53750bdd5d77eb9
