@@ -1,13 +1,17 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<form action="/send" method="POST" onsubmit="return check(this)">
-    Title: <input type="text" name="title">
-    Message: <textarea name="message"></textarea>
-    <input type="submit" value="Send">
+<div class='container'>
+    <form action='/send' method='POST' onsubmit='return check(this)'>
+        <p><label for='title'>Title:</label></p>
+        <p><input type='text' name='title' id='title' style='width: 100%; box-sizing: border-box;'></p>
+        <p><label for='message'>Message:</label></p>
+        <p><textarea name='message' id='message' style='width: 100%; box-sizing: border-box;'></textarea></p>
+        <p><input type='submit' value='Send'></p>
     </form>
-    
-    <script>
+</div>
+
+<script>
     function check(form) {
         if (form.title.value.length > 100) {
             alert("Title too long. Ensure it is under 100 characters.");
@@ -19,7 +23,6 @@
         }
         return true;
     }
-    </script>
-
+</script>
 
 {% endblock %}
