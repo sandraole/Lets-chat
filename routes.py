@@ -75,9 +75,9 @@ def send():
         return render_template('error.html', message='Message failed to send.')
     
 
-@app.route('/platform')
+@app.route('/new')
 def platform():
-    return render_template('platform.html')
+    return render_template('new.html')
 
 @app.route('/rules')
 def rules():
