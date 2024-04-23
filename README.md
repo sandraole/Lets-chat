@@ -44,8 +44,10 @@ keskusteluita. Tarvittaessa ylläpitäjä voi antaa harvoille ja valituille käy
 1. Tallenna tästä sovelluksesta löytyvät tiedostot samaan kansioon. (**Huomaa** tiedoston requirement.txt vaadittavat paketit ja lataa ne)
 
 2. Luo .env tiedosto kyseiseen kansioon ja lisää siihen seuraavat tiedot:
- - **DATABASE_URL=<database-local-address> (postgresql:///user)**
- - **SECRET_KEY=<your_secret_key>**
+   ```
+ - DATABASE_URL=<database-local-address> (postgresql:///user)
+ - SECRET_KEY=<your_secret_key>
+   ```
 
 3. Avaa terminaali, aktivoi virtuaaliympäristö ja aja seuraavat käskyt:
  - **$ python3 -m venv venv**
