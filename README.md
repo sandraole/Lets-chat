@@ -45,27 +45,49 @@ keskusteluita. Tarvittaessa ylläpitäjä voi antaa harvoille ja valituille käy
 
 ## Sovelluksen asentamisen ohjeet paikallisesti:
 
-1. Tallenna tästä sovelluksesta löytyvät tiedostot samaan kansioon. (**Huomaa** tiedoston requirement.txt vaadittavat paketit ja lataa ne)
+1. Kloonaa repositorio "Let's Chat" koneellesi:
+   ```
+   git clone https://github.com/taisteluvalmis/Lets-chat.git
+   ```
 
-2. Luo .env tiedosto kyseiseen kansioon ja lisää siihen seuraavat tiedot:
+2. Siirry oikeaan kansioon, josta sovellus löytyy:
+   ```
+   cd Lets-chat
+   ```
+
+3. Luo .env tiedosto kyseiseen kansioon ja lisää siihen seuraavat tiedot:
    ```
    DATABASE_URL=<database-local-address> (postgresql:///user)
    SECRET_KEY=<your_secret_key>
    ```
 
-3. Avaa terminaali, aktivoi virtuaaliympäristö ja aja seuraavat käskyt:
+4. Käynnistä virtuaaliympäristö ja aja seuraavat käskyt:
    ```
    python3 -m venv venv
    source venv/bin/activate
+   ```
+
+5. Asenna Flask:
+   ```
+   pip install flask
+   ```
+
+6. Asenna riippuvuudet:
+   ```
    pip install -r ./requirements.txt
    ```
 
-4. Luo tietokanta psql:ssä:
+7. Avaa taustalle toinen terminaali ja aja käsky:
+   ```
+   start-pg.sh
+   ```
+
+8. Luo tietokanta psql:ssä:
    ```
    psql < schema.sql
    ```
 
-6. Käynnistä sovellus:
+9. Käynnistä sovellus:
    ```
    flask run
    ```
