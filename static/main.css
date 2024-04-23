@@ -74,3 +74,17 @@ hr {
 .center {
     text-align: center;
 }
+
+.flash-messages-container {
+    border: 2px solid #BFACD2;
+    padding: 5px;
+    margin: 20px auto;
+    max-width: 300px;
+    border-radius: 30px;
+    background-color: lavender;
+  }
+  
+  .flash-message {
+    margin-bottom: 5px;
+  }
+  

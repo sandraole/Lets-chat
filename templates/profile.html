@@ -3,17 +3,17 @@
 
 <div class='container'>
 <h2 class='center'>Welcome to chat!</h2>
-<nav>
-<ul>
-<li><a href='/'>Front page</a></li>
-<li><a href='/courses'>Topics</a></li>
-<li><a href='/profile'>Profile</a></li>
-<li><a href='/logout'>Logout</a></li>
-</ul>
-</nav>
-</header>
-<main>
 
+<p>Read the <a href='/rules'>rules</a></p>
 
+<form action='/platform' method='GET'>
+<input type='submit' value='Start a new conversation'>
+
+<p>Are you ready to leave? You can log out from here if you're finished.</p>
+<form action='/logout' method='GET'>
+<input type='submit' value='Logout'>
+</form>
+</div>
+<hr>
 
 {% endblock %}

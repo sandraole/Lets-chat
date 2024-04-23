@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<form action="/send" method="POST" onsubmit="return check(this)">
+    Title: <input type="text" name="title">
+    Message: <textarea name="message"></textarea>
+    <input type="submit" value="Send">
+    </form>
+    
+    <script>
+    function check(form) {
+        if (form.title.value.length > 100) {
+            alert("Title too long. Ensure it is under 100 characters.");
+            return false;
+        }
+        if (form.message.value.length > 5000) {
+            alert("Message too long. Ensure it is under 5000 characters.");
+            return false;
+        }
+        return true;
+    }
+    </script>
+
+
+{% endblock %}

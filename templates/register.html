@@ -15,11 +15,23 @@
 
 <p>Repeat password:<br>
 <input type='password' name='password2' id='password2' minlength='5' maxlength='25' class='input-box' placeholder='5-25 characters' required></b><br>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="flash-messages-container">
+      {% for message in messages %}
+        <div class="flash-message alert alert-{{ message[1] }}"><i>{{ message }}</i></div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
 <p>Select role:</p>
 <select name='role'>
 <option value='1'>Regular user</option>
 <option value='2'>Admin</option>
 </select>
+
 
 <p>After you've completed the required fields, please press "Confirm registration".</p>
 
