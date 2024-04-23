@@ -28,15 +28,16 @@ keskusteluita. Tarvittaessa ylläpitäjä voi antaa harvoille ja valituille käy
     * Ylläpitäjä voi luoda salaisen alueen ja määrittää, keillä käyttäjillä on pääsy alueelle.
 
 
-### Tämän hetken tilanne (07.04.2024):
-    * Minulla oli SSH-yhteyden kanssa ongelmia. Jouduin poistamaan githubin vanhan repon kokonaan ja tekemään uuden. Nyt ongelma on korjattu.
+### Tämän hetken tilanne (23.04.2024):
     * Käyttäjä voi tehdä käyttäjätunnuksen ja kirjautua sisään.
+    * Sivustolla kävijä näkee kuinka mones vierailija hän on.
     * Sovelluksen html tiedostot ja ulkoasu ovat käytännössä valmiit. Puuttuu vain muutama html.
-    * Sovellus on vielä vaiheessa, mutta siihen on tulossa lisää toiminnallisuuksia ja tauluja. Seuraavaksi aloitan keskutelupalstan tekemisen.
+    * Sovelluksen toiminnallisuudet on vielä vaiheessa. Seuraavaksi aloitan keskutelupalstan tekemisen.
  
 
 ### Sovelluksen taulut:
     1. Users
+    2. Visitors
 
 
 ## Sovelluksen asentamisen ohjeet paikallisesti:
@@ -44,16 +45,24 @@ keskusteluita. Tarvittaessa ylläpitäjä voi antaa harvoille ja valituille käy
 1. Tallenna tästä sovelluksesta löytyvät tiedostot samaan kansioon. (**Huomaa** tiedoston requirement.txt vaadittavat paketit ja lataa ne)
 
 2. Luo .env tiedosto kyseiseen kansioon ja lisää siihen seuraavat tiedot:
- - **DATABASE_URL=<database-local-address> (postgresql:///user)**
- - **SECRET_KEY=<your_secret_key>**
+   ```
+   DATABASE_URL=<database-local-address> (postgresql:///user)
+   SECRET_KEY=<your_secret_key>
+   ```
 
 3. Avaa terminaali, aktivoi virtuaaliympäristö ja aja seuraavat käskyt:
- - **$ python3 -m venv venv**
- - **$ source venv/bin/activate**
- - **$ pip install -r ./requirements.txt**
+   ```
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install -r ./requirements.txt
+   ```
 
 4. Luo tietokanta psql:ssä:
- - **$ psql < schema.sql**
+   ```
+   psql < schema.sql
+   ```
 
-5. Käynnistä sovellus:
- - **$ flask run**
+6. Käynnistä sovellus:
+   ```
+   flask run
+   ```
