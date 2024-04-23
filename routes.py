@@ -1,10 +1,12 @@
 from app import app
-from flask import redirect, render_template, request, session
-import users
+from flask import redirect, render_template, request
+import users, visits
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    visits.add_visit()
+    counter = visits.get_counter()
+    return render_template('index.html', counter=counter)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -17,8 +19,8 @@ def login():
 
     if not users.login(username, password):
         return render_template('error.html', message='Wrong username or password')
-    
-    return redirect('/login')
+
+    return redirect('/profile')
 
 @app.route('/logout')
 def logout():
@@ -38,6 +40,7 @@ def register():
 
         password1 = request.form['password1']
         password2 = request.form['password2']
+
         if password1 != password2:
             return render_template('error.html', message='Passwords do not match')
         if password1 == '':
@@ -49,24 +52,14 @@ def register():
 
         if not users.register(username, password1, role):
             return render_template('error.html', message='Registartion failed, make sure to check username and password')
-        return redirect('/register')
+        
+        return redirect('/')
     return render_template('register.html')
 
-# Add new course
-@app.route('/add_course', methods=['POST'])
-def add_course():
-    pass
+@app.route('/profile', methods=['GET'])
+def profile():
+    return render_template('profile.html')
 
-
-# Add new lesson
-@app.route('/add_lesson', methods=['POST'])
-def add_lesson():
-    pass
-
-# Sign up for the course
-@app.route('/enroll_course', methods=['POST'])
-def enroll_course():
-    pass
 
 
 
