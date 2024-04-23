@@ -45,8 +45,8 @@ keskusteluita. Tarvittaessa ylläpitäjä voi antaa harvoille ja valituille käy
 
 2. Luo .env tiedosto kyseiseen kansioon ja lisää siihen seuraavat tiedot:
    ```
- - DATABASE_URL=<database-local-address> (postgresql:///user)
- - SECRET_KEY=<your_secret_key>
+   DATABASE_URL=<database-local-address> (postgresql:///user)
+   SECRET_KEY=<your_secret_key>
    ```
 
 3. Avaa terminaali, aktivoi virtuaaliympäristö ja aja seuraavat käskyt:
