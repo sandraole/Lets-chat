@@ -6,13 +6,12 @@ import users, visits, messages
 def index():
     visits.add_visit()
     counter = visits.get_counter()
-    list = messages.get_list()
-    return render_template('index.html', counter=counter, count=len(list), messages=list)
+    return render_template('index.html', counter=counter)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
-        return render_template('login.html')
+        return render_template('layout.html')
 
     if request.method == 'POST':
         username = request.form['username']
@@ -55,7 +54,7 @@ def register():
             return render_template('register.html')
 
         if not users.register(username, password1, role):
-            flash('Registartion failed, make sure to check username and password')
+            flash('Registration failed, make sure to check username and password')
             return render_template('register.html')
         
         flash('User registration successful. You may now proceed to login.', 'success')
@@ -64,19 +63,20 @@ def register():
 
 @app.route('/profile', methods=['GET'])
 def profile():
-    return render_template('profile.html')
+    list = messages.get_list()
+    return render_template('profile.html', count=len(list), messages=list)
 
 @app.route('/send', methods=['POST'])
 def send():
     content = request.form['content']
     if messages.send(content):
-        return redirect('/platform')
+        return redirect('/profile')
     else:
         return render_template('error.html', message='Message failed to send.')
     
 
 @app.route('/new')
-def platform():
+def new():
     return render_template('new.html')
 
 @app.route('/rules')
