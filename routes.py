@@ -1,6 +1,7 @@
 from app import app
 from flask import redirect, render_template, request, flash
-import users, visits, messages, topics
+import users, visits, messages
+from messages import search_messages
 
 @app.route('/')
 def index():
@@ -84,3 +85,13 @@ def new():
 @app.route('/rules')
 def rules():
     return render_template('rules.html')
+
+
+@app.route('/search', methods=['GET'])
+def search():
+    query = request.args.get('query')
+    if not query:
+        return render_template('error.html', message='Search query is required')
+
+    results = search_messages(query)  # Kutsu suoraan search_messages-funktiota
+    return render_template('profile.html', messages=results)
