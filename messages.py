@@ -20,3 +20,4 @@ def search_messages(query):
     sql = text("SELECT M.content, U.username, M.created_at, M.topic FROM messages M JOIN users U ON M.user_id = U.id WHERE M.content ILIKE :query OR M.topic ILIKE :query ORDER BY M.created_at DESC")
     result = db.session.execute(sql, {'query': f'%{query}%'})
     return result.fetchall()
+

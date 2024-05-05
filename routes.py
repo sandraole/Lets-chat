@@ -93,5 +93,24 @@ def search():
     if not query:
         return render_template('error.html', message='Search query is required')
 
-    results = search_messages(query)  # Kutsu suoraan search_messages-funktiota
+    results = search_messages(query)
     return render_template('profile.html', messages=results)
+
+@app.route('/like', methods=['POST'])
+def like_message():
+    user_id = users.user_id()
+    message_id = request.form.get('message_id')
+
+    if not message_id or not message_id.isdigit():
+        flash('Invalid or missing message ID.', 'error')
+        return redirect('/profile')
+
+    message_id = int(message_id)
+
+    if add_like(user_id, message_id):
+        flash('Liked the message successfully!', 'success')
+    else:
+        flash('Failed to like the message.', 'error')
+
+    return redirect('/profile')
+

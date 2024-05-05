@@ -25,17 +25,18 @@ keskusteluita. Tarvittaessa ylläpitäjä voi antaa harvoille ja valituille käy
     * Käyttäjä voi muokata luomansa ketjun otsikkoa sekä lähettämänsä viestin sisältöä. Käyttäjä voi myös poistaa ketjun tai viestin.
     * Käyttäjä voi etsiä kaikki viestit, joiden osana on annettu sana.
     * Ylläpitäjä voi lisätä ja poistaa keskustelualueita.
-    * Ylläpitäjä voi luoda salaisen alueen ja määrittää, keillä käyttäjillä on pääsy alueelle.
 
-
-### Tämän hetken tilanne (23.04.2024):
+### Tämän hetken tilanne (05.05.2024):
     * Sivustolla kävijä näkee kuinka mones vierailija hän on.
-    * Käyttäjä voi tehdä käyttäjätunnuksen ja kirjautua sisään.
+    * Käyttäjä voi kirjautua sisään ja ulos, sekä luoda uuden tunnuksen.
     * Kirjautuessaan käyttäjä pääsee omaan profiiliin, josta hän pääsee lukemaan keskustelupalstan säännöt.
-    * Pääsee sivustolle, jossa voi tehdä oman keskustelun. Itse keskustelun tekeminen ei vielä toimi.
-    * Sovelluksen toiminnallisuudet on vielä vaiheessa. Keskustelupalstan pohja ja funktiot ovat valmiit, mutta kaikki ei toimi vielä yhdessä.
-    * Sovelluksen html tiedostot ja ulkoasu ovat käytännössä valmiit. Puuttuu vain muutama html.
- 
+    * Käyttäjä pystyy tekemään keskustelun.
+    * Käyttäjän profiilissa näkyvät lähetetyt viestit ja niistä pystyy hakusanalla etsimään haluttuja keskusteluja.
+    * Käyttäjä pystyy tykkäämään keskustelusta. (Toiminnallisuudet valmiit, mutta tykkäys määritelty väärin profile.html:ssä ja sen vuoksi se ei näytä määrää.)
+    * Sovelluksen ulkoasu on täysin valmis.
+    * Tällä hetkellä 4 taulua.
+    * Sovellus jäi kesken ja sen vuoksi moni toiminnallisuuksista puuttuu.
+
 
 ### Sovelluksen taulut:
     1. Users

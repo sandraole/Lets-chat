@@ -14,27 +14,35 @@
 
   <p>Number of messages: {{ count }}</p>
   <hr>
-  {% for message in messages | sort(attribute='2', reverse=true) %}
-    <p><i>Title:</i> {{ message[3] }}</p>
-    <p><i>Message:</i> {{ message[0] }}</p>
-    <p><i>Sent by:</i> {{ message[1] }}</p>
-    <p><i>Time:</i> {{ message[2].strftime("%Y-%m-%d %H:%M:%S") }}</p>
-    <hr>
+  {% for message in messages %} 
+    <div>
+      <p><i>Title:</i> {{ message.topic }}</p>
+      <p><i>Message:</i> {{ message.content }}</p>
+      <p><i>Sent by:</i> {{ message.username }}</p>
+      <p><i>Time:</i> {{ message.created_at.strftime("%Y-%m-%d %H:%M:%S") }}</p>
+      <p><i>Likes:</i> {{ message.likes }}</p> 
+      <div style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+        <form action="/like" method="post" style="margin-right: 10px;">
+            <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
+            <input type="hidden" name="message_id" value="{{ message.id }}">
+            <button type="submit" class="btn">Like</button>
+        </form>
+      </div>
+      <hr>
+    </div>
   {% endfor %}
 
   <form action="/search" method="get">
     <input type="text" name="query" placeholder="Search messages..." required>
     <button type="submit">Search</button>
-</form>
-
+  </form>
 
   <p>Are you ready to leave? You can log out from here if you're finished.</p>
   <form action='/logout' method='GET'>
     <input type='submit' value='Logout'>
   </form>
 
-<p>After search return back to <a href='/profile'>profile</a></p>
-
+  <p>After search return back to <a href='/profile'>profile</a></p>
 
 </div>
 <hr>
