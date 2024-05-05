@@ -1,6 +1,6 @@
 from app import app
 from flask import redirect, render_template, request, flash
-import users, visits, messages
+import users, visits, messages, topics
 
 @app.route('/')
 def index():
@@ -67,9 +67,11 @@ def profile():
     return render_template('profile.html', count=len(list), messages=list)
 
 @app.route('/send', methods=['POST'])
-def send():
+def send_message():
     content = request.form['content']
-    if messages.send(content):
+    topic_id = request.form['topic']
+
+    if messages.send(content, topic_id):
         return redirect('/profile')
     else:
         return render_template('error.html', message='Message failed to send.')
@@ -82,5 +84,3 @@ def new():
 @app.route('/rules')
 def rules():
     return render_template('rules.html')
-
-

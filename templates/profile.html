@@ -15,6 +15,7 @@
   <p>Number of messages: {{ count }}</p>
   <hr>
   {% for message in messages | sort(attribute='2', reverse=true) %}
+    <p><i>Title:</i> {{ message[3] }}</p>
     <p><i>Message:</i> {{ message[0] }}</p>
     <p><i>Sent by:</i> {{ message[1] }}</p>
     <p><i>Time:</i> {{ message[2].strftime("%Y-%m-%d %H:%M:%S") }}</p>
