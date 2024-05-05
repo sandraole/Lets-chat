@@ -34,7 +34,6 @@ keskusteluita. Tarvittaessa ylläpitäjä voi antaa harvoille ja valituille käy
     * Käyttäjän profiilissa näkyvät lähetetyt viestit ja niistä pystyy hakusanalla etsimään haluttuja keskusteluja.
     * Käyttäjä pystyy tykkäämään keskustelusta. (Toiminnallisuudet valmiit, mutta tykkäys määritelty väärin profile.html:ssä ja sen vuoksi se ei näytä määrää.)
     * Sovelluksen ulkoasu on täysin valmis.
-    * Tällä hetkellä 4 taulua.
     * Sovellus jäi kesken ja sen vuoksi moni toiminnallisuuksista puuttuu.
 
 
@@ -42,6 +41,7 @@ keskusteluita. Tarvittaessa ylläpitäjä voi antaa harvoille ja valituille käy
     1. Users
     2. Visitors
     3. Messages
+    4. Likes
 
 
 ## Sovelluksen asentamisen ohjeet paikallisesti:
