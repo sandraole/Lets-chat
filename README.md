@@ -48,7 +48,7 @@ keskusteluita. Tarvittaessa ylläpitäjä voi antaa harvoille ja valituille käy
 
 1. Kloonaa repositorio "Let's Chat" koneellesi:
    ```
-   git clone https://github.com/taisteluvalmis/Lets-chat.git
+   git clone https://github.com/sandraole/Lets-chat.git
    ```
 
 2. Siirry oikeaan kansioon, josta sovellus löytyy:
